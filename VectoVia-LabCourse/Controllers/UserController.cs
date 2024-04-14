@@ -17,6 +17,21 @@ namespace VectoVia_LabCourse.Controllers
             _userService = userServices;
         }
 
+        [HttpGet("get-users")]
+        public IActionResult GetUsers()
+        {
+            var users = _userService.GetUsers();
+            return Ok(users);
+        }
+
+        [HttpGet("get-users-id/{id}")]
+        public IActionResult GetUsersByID(int id)
+        {
+            var user = _userService.GetUsersByID(id);
+            return Ok(user);
+        }
+
+
         [HttpPost("add-user")]
 
         public IActionResult AddUser([FromBody]UserVM user)
