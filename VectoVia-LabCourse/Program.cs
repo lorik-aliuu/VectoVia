@@ -8,7 +8,7 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<UsersDbContext>(options =>
 {
-    options.UseSqlServer("Data Source=DESKTOP-STP67R0;Initial Catalog=VectoViaDBO;Integrated Security=True;Pooling=False;Encrypt=True;Trust Server Certificate=True");
+    options.UseSqlServer("Data Source=DESKTOP-KHPDUTF;Initial Catalog=VektoViaDBO;Integrated Security=True;Pooling=False;Encrypt=True;Trust Server Certificate=True");
 });
 
 

@@ -10,9 +10,9 @@ namespace VectoVia_LabCourse.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        public UserServices _userService;
+        public UsersServices _userService;
 
-        public UserController(UserServices userServices)
+        public UserController(UsersServices userServices)
         {
             _userService = userServices;
         }

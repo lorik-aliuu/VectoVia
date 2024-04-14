@@ -4,10 +4,10 @@ using VectoVia_LabCourse.Views;
 
 namespace VectoVia_LabCourse.Models.Users.Services
 {
-    public class UserServices
+    public class KompaniaTaxiServices
     {
         private UsersDbContext _context;
-        public UserServices(UsersDbContext context)
+        public KompaniaTaxiServices(UsersDbContext context)
         {
             _context = context;
         }
@@ -23,6 +23,11 @@ namespace VectoVia_LabCourse.Models.Users.Services
             };
             _context.Users.Add(_user);
             _context.SaveChanges();
+        }
+
+        internal void AddKompaniaTaxi(KompaniaTaxiVM kompaniaTaxi)
+        {
+            throw new NotImplementedException();
         }
     }
 }
