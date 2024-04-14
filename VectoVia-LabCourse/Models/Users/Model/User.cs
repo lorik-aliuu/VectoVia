@@ -1,4 +1,6 @@
-﻿namespace VectoVia.Models.Users.Model
+﻿using System.Data.SqlTypes;
+
+namespace VectoVia.Models.Users.Model
 {
     public class User
     {
@@ -14,7 +16,7 @@
 
         public string Password { get; set; }
 
-        public int Roles { get; set; }
+        public int Role { get; set; }
 
     }
 }

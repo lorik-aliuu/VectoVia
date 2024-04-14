@@ -21,7 +21,7 @@ namespace VectoVia_LabCourse.Migrations
                     Username = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Roles = table.Column<int>(type: "int", nullable: false)
+                    Roles = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {

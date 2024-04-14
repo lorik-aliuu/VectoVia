@@ -1,24 +1,26 @@
 using Microsoft.EntityFrameworkCore;
 using VectoVia.Models.Users;
+using VectoVia_LabCourse.Models.Users.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddDbContext<UsersDbContext>(options =>
-{
-    options.UseSqlServer("Data Source=DESKTOP-KHPDUTF;Initial Catalog=VektoViaDBO;Integrated Security=True;Pooling=False;Encrypt=True;Trust Server Certificate=True");
-});
+builder.Services.AddDbContext<UsersDbContext>(options => options.UseSqlServer(
+    builder.Configuration.GetConnectionString("AlpPCString") //Ndrro emrin e stringut qitu per me connect to your database
+));
 
-
-builder.Services.AddTransient<UsersServices>();
+builder.Services.AddTransient<UserServices>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
+
 var app = builder.Build();
 
+app.MapControllers();
 app.UseSwagger();
 app.UseSwaggerUI();
 
