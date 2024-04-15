@@ -21,7 +21,7 @@ builder.Services.AddTransient<UserServices>();
 builder.Services.AddTransient<KompaniaTaxiServices>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(); 
 
 
 

@@ -1,4 +1,6 @@
-﻿using VectoVia.Models.Users;
+﻿using System.Data;
+using System.Diagnostics.Eventing.Reader;
+using VectoVia.Models.Users;
 using VectoVia.Models.Users.Model;
 using VectoVia.Views;
 
@@ -36,5 +38,24 @@ namespace VectoVia.Models.Users.Services
         {
             return _context.Users.FirstOrDefault(n => n.ID == UserID);
         }
+
+        public User UpdateUserByID(int UserID, UserVM user)
+        {
+            var _user = _context.Users.FirstOrDefault(n => n.ID==UserID);
+            if (_user != null)
+            {
+                _user.Emri = user.Emri;
+                _user.Mbiemri = user.Mbiemri;
+                _user.Username = user.Username;
+                _user.Email = user.Email;
+                _user.Password = user.Password;
+                _user.Role = user.Role;
+
+                _context.SaveChanges();
+            }
+
+            return _user;
+
+        }   
     }
 }
