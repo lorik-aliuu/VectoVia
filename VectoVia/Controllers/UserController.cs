@@ -46,5 +46,12 @@ namespace VectoVia.Controllers
             var updatedUser = _userService.UpdateUserByID(id, user);
             return Ok(updatedUser);
         }
+
+        [HttpDelete("delete-user-by-id/{id}")]
+        public IActionResult DeleteUserByID(int id)
+        {
+            _userService.DeleteUserByID(id);
+            return Ok();
+        }
     }
 }

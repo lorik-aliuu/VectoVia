@@ -56,6 +56,17 @@ namespace VectoVia.Models.Users.Services
 
             return _user;
 
-        }   
+        }
+        
+        public void DeleteUserByID(int UserID)
+        {
+            var _user = _context.Users.FirstOrDefault(n => n.ID == UserID);
+            if(_user != null )
+            {
+                _context.Users.Remove(_user);
+                _context.SaveChanges();
+            }
+        }
+
     }
 }
