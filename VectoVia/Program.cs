@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using VectoVia.Models.Users;
-using VectoVia_LabCourse.Models.Users.Services;
+using VectoVia.Models.KompaniaTaxi.Services;
+using VectoVia.Models.Users.Services;
+using VectoVia.Models.KompaniaTaxi;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +13,12 @@ builder.Services.AddDbContext<UsersDbContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("AlpPCString") //Ndrro emrin e stringut qitu per me connect to your database
 ));
 
+builder.Services.AddDbContext<KompaniaTaxisDbContext>(options => options.UseSqlServer(
+    builder.Configuration.GetConnectionString("AlpPCString")
+));
+
 builder.Services.AddTransient<UserServices>();
+builder.Services.AddTransient<KompaniaTaxiServices>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

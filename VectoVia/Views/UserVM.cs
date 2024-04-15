@@ -1,6 +1,6 @@
 ﻿
 
-namespace VectoVia_LabCourse.Views
+namespace VectoVia.Views
 {
     public class UserVM
     {

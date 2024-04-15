@@ -1,13 +1,13 @@
 ﻿using VectoVia.Models.Users;
 using VectoVia.Models.Users.Model;
-using VectoVia_LabCourse.Views;
+using VectoVia.Views;
 
-namespace VectoVia_LabCourse.Models.Users.Services
+namespace VectoVia.Models.Users.Services
 {
-    public class KompaniaTaxiServices
+    public class UserServices
     {
         private UsersDbContext _context;
-        public KompaniaTaxiServices(UsersDbContext context)
+        public UserServices(UsersDbContext context)
         {
             _context = context;
         }
