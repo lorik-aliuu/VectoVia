@@ -3,6 +3,7 @@ using VectoVia.Models.Users;
 using VectoVia.Models.KompaniaTaxi.Services;
 using VectoVia.Models.Users.Services;
 using VectoVia.Models.KompaniaTaxi;
+using VectoVia.Models.Cars;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,11 +11,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<UsersDbContext>(options => options.UseSqlServer(
-    builder.Configuration.GetConnectionString("AltinLaptopString") //Ndrro emrin e stringut qitu per me connect to your database
+    builder.Configuration.GetConnectionString("EdrinLaptopString") //Ndrro emrin e stringut qitu per me connect to your database
 ));
 
 builder.Services.AddDbContext<KompaniaTaxisDbContext>(options => options.UseSqlServer(
-    builder.Configuration.GetConnectionString("AltinLaptopString")
+    builder.Configuration.GetConnectionString("EdrinLaptopString")
+));
+
+builder.Services.AddDbContext<CarsDbContext>(options => options.UseSqlServer(
+    builder.Configuration.GetConnectionString("EdrinLaptopString")
 ));
 
 builder.Services.AddTransient<UserServices>();
