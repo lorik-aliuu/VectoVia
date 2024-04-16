@@ -19,17 +19,17 @@ namespace VectoVia.Controllers
         }
 
         [HttpGet("get-kompaniteTaxi")]
-        public IActionResult GetUsers()
+        public IActionResult GetKompaniteTaxi()
         {
-            var users = _KompaniaTaxiServices.GetKompaniteTaxi();
-            return Ok(users);
+            var kompaniataxi = _KompaniaTaxiServices.GetKompaniteTaxi();
+            return Ok(kompaniataxi);
         }
 
-        [HttpGet("get-kompaniteTaxi-id/{id}")]
-        public IActionResult GetUsersByID(int id)
+        [HttpGet("get-kompaniteTaxi-id/{companyid}")]
+        public IActionResult GetKompaniteTaxiByID(int companyid)
         {
-            var user = _KompaniaTaxiServices.GetKompaniteTaxiByID(id);
-            return Ok(user);
+            var kompaniataxi = _KompaniaTaxiServices.GetKompaniteTaxiByID(companyid);
+            return Ok(kompaniataxi);
         }
 
         [HttpPost("add-KompaniaTaxi")]
@@ -39,5 +39,20 @@ namespace VectoVia.Controllers
             _KompaniaTaxiServices.AddKompaniaTaxi(kompaniaTaxi);
             return Ok();
         }
+
+        [HttpPut("update-kompaniaTaxi-by-id/{companyid}")]
+        public IActionResult UpdateKompaniaTaxiByID(int companyid, [FromBody] KompaniaTaxiVM kompaniaTaxi)
+        {
+            var updatedKompaniataxi = _KompaniaTaxiServices.UpdateKompaniaTaxiByID(companyid, kompaniaTaxi);
+            return Ok(updatedKompaniataxi);
+        }
+
+        [HttpDelete("delete-kompaniaTaxi-by-id/{companyid}")]
+        public IActionResult DeleteKompaniTaxiByID(int companyid)
+        {
+            _KompaniaTaxiServices.DeleteKompaniTaxiByID(companyid);
+            return Ok();
+        }
+
     }
 }

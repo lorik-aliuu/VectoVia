@@ -1,6 +1,7 @@
 ﻿
 using VectoVia.Views;
 using VectoVia.Models.KompaniaTaxi.Model;
+using VectoVia.Models.Users.Model;
 
 
 
@@ -38,5 +39,35 @@ namespace VectoVia.Models.KompaniaTaxi.Services
         {
             return _context.KompaniaTaxis.FirstOrDefault(n => n.CompanyID == KompaniaTaxiID);
         }
+
+        public KompaniaTaxii UpdateKompaniaTaxiByID(int KompaniaTaxiID, KompaniaTaxiVM KompaniaTaxi)
+        {
+            var _kompaniataxi = _context.KompaniaTaxis.FirstOrDefault(n => n.CompanyID == KompaniaTaxiID);
+            if (_kompaniataxi != null)
+            {
+                _kompaniataxi.Kompania = KompaniaTaxi.Kompania;
+                _kompaniataxi.Location = KompaniaTaxi.Location;
+                _kompaniataxi.Qyteti = KompaniaTaxi.Qyteti;
+                _kompaniataxi.ContactInfo = KompaniaTaxi.ContactInfo;
+                _kompaniataxi.Sigurimi = KompaniaTaxi.Sigurimi;
+
+                _context.SaveChanges();
+            }
+
+            return _kompaniataxi;
+
+        }
+
+        public void DeleteKompaniTaxiByID(int KompaniaTaxiID)
+        {
+            var _kompaniataxi = _context.KompaniaTaxis.FirstOrDefault(n => n.CompanyID == KompaniaTaxiID);
+            if (_kompaniataxi != null)
+            {
+                _context.KompaniaTaxis.Remove(_kompaniataxi);
+                _context.SaveChanges();
+            }
+        }
+
+
     }
 }

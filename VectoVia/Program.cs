@@ -10,11 +10,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<UsersDbContext>(options => options.UseSqlServer(
-    builder.Configuration.GetConnectionString("AlpPCString") //Ndrro emrin e stringut qitu per me connect to your database
+    builder.Configuration.GetConnectionString("AltinLaptopString") //Ndrro emrin e stringut qitu per me connect to your database
 ));
 
 builder.Services.AddDbContext<KompaniaTaxisDbContext>(options => options.UseSqlServer(
-    builder.Configuration.GetConnectionString("AlpPCString")
+    builder.Configuration.GetConnectionString("AltinLaptopString")
 ));
 
 builder.Services.AddTransient<UserServices>();
