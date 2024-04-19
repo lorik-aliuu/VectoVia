@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using VectoVia.Models.TaxiCars.Services;
-using VectoVia.Models.Users.Services;
 using VectoVia.Views;
 
 namespace VectoVia.Controllers
@@ -20,9 +19,9 @@ namespace VectoVia.Controllers
         }
 
         [HttpGet("get-taxi-cars")]
-        public IActionResult GetTaxiCars()
+        public IActionResult GetAllTaxiCars()
         {
-            var taxiCars = _taxiServices;
+            var taxiCars = _taxiServices.GetAllTaxiCars() ;
             return Ok(taxiCars);
         }
 

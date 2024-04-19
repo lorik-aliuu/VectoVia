@@ -2,6 +2,8 @@
 {
     public class TaxiCarVM
     {
+        public string Targat { get; set; }
+
         public int TaxiID { get; set; }
 
         public int nrPassenger { get; set; }

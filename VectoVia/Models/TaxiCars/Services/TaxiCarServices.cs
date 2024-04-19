@@ -1,7 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using VectoVia.Models.Cars.Model;
-using VectoVia.Models.TaxiCars.Model;
-using VectoVia.Models.Users.Model;
+﻿using VectoVia.Models.TaxiCars.Model;
 using VectoVia.Views;
 
 namespace VectoVia.Models.TaxiCars.Services
@@ -22,7 +19,7 @@ namespace VectoVia.Models.TaxiCars.Services
             var _taxiCar = new TaxiCar()
             {
 
-               
+                Targat = tx.Targat,
 
                 TaxiID = tx.TaxiID,
 
@@ -43,7 +40,7 @@ namespace VectoVia.Models.TaxiCars.Services
 
         }
 
-        public List<TaxiCar> GetTaxiCars()
+        public List<TaxiCar> GetAllTaxiCars()
         {
             var allTaxiCars = _context.TaxiCars.ToList();
             return allTaxiCars;
@@ -54,9 +51,9 @@ namespace VectoVia.Models.TaxiCars.Services
             return _context.TaxiCars.FirstOrDefault(n => n.Targat.Equals(i));
         }
 
-        public TaxiCar UpdateTaxiCarByTargat(string i, TaxiCarVM Car)
+        public TaxiCar UpdateTaxiCarByTargat(string targat, TaxiCarVM Car)
         {
-            var _taxiCar = _context.TaxiCars.FirstOrDefault(n => n.Targat.Equals(i));
+            var _taxiCar = _context.TaxiCars.FirstOrDefault(n => n.Targat.Equals(targat));
             if (_taxiCar != null)
             {
                 _taxiCar.TaxiID = Car.TaxiID;
