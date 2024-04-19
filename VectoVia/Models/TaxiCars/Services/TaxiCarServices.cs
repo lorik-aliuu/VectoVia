@@ -22,7 +22,7 @@ namespace VectoVia.Models.TaxiCars.Services
             var _taxiCar = new TaxiCar()
             {
 
-                Targat = tx.Targat,
+               
 
                 TaxiID = tx.TaxiID,
 
