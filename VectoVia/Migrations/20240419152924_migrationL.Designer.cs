@@ -11,8 +11,8 @@ using VectoVia.Models.Users;
 namespace VectoVia_LabCourse.Migrations
 {
     [DbContext(typeof(UsersDbContext))]
-    [Migration("20240415000543_alpi2")]
-    partial class alpi2
+    [Migration("20240419152924_migrationL")]
+    partial class migrationL
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

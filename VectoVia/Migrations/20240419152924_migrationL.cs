@@ -5,7 +5,7 @@
 namespace VectoVia_LabCourse.Migrations
 {
     /// <inheritdoc />
-    public partial class alpi2 : Migration
+    public partial class migrationL : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
