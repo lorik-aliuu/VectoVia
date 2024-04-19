@@ -65,7 +65,7 @@ namespace VectoVia.Models.TaxiCars.Services
                 _taxiCar.llojiVetures = Car.llojiVetures;
                 _taxiCar.llojiKarburantit = Car.llojiKarburantit;
                 _taxiCar.iDisponueshem = Car.iDisponueshem;
-                
+
 
                 _context.SaveChanges();
             }
