@@ -18,7 +18,7 @@ namespace VectoVia.Models.KompaniaTaxi.Services
 
         public void AddKompaniaTaxi(KompaniaTaxiVM kompaniaTaxi)
         {
-            var _kompaniaTaxi = new KompaniaTaxii()
+            var _kompaniaTaxi = new Model.KompaniaTaxi()
             {
                 Kompania = kompaniaTaxi.Kompania,
                 Location = kompaniaTaxi.Location,
@@ -30,17 +30,17 @@ namespace VectoVia.Models.KompaniaTaxi.Services
             _context.SaveChanges();
         }
 
-        public List<KompaniaTaxii> GetKompaniteTaxi()
+        public List<Model.KompaniaTaxi> GetKompaniteTaxi()
         {
-            var allUsers = _context.KompaniaTaxis.ToList();
-            return allUsers;
+            var allKompaniaTaxi = _context.KompaniaTaxis.ToList();
+            return allKompaniaTaxi;
         }
-        public KompaniaTaxii GetKompaniteTaxiByID(int KompaniaTaxiID)
+        public Model.KompaniaTaxi GetKompaniteTaxiByID(int KompaniaTaxiID)
         {
             return _context.KompaniaTaxis.FirstOrDefault(n => n.CompanyID == KompaniaTaxiID);
         }
 
-        public KompaniaTaxii UpdateKompaniaTaxiByID(int KompaniaTaxiID, KompaniaTaxiVM KompaniaTaxi)
+        public Model.KompaniaTaxi UpdateKompaniaTaxiByID(int KompaniaTaxiID, KompaniaTaxiVM KompaniaTaxi)
         {
             var _kompaniataxi = _context.KompaniaTaxis.FirstOrDefault(n => n.CompanyID == KompaniaTaxiID);
             if (_kompaniataxi != null)

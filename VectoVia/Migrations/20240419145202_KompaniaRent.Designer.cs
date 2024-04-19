@@ -2,17 +2,20 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using VectoVia.Models.KompaniaTaxi;
+using VectoVia.Models.Users;
 
 #nullable disable
 
-namespace VectoVia_LabCourse.Migrations.KompaniaTaxisDb
+namespace VectoVia_LabCourse.Migrations
 {
-    [DbContext(typeof(KompaniaTaxisDbContext))]
-    partial class KompaniaTaxisDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(UsersDbContext))]
+    [Migration("20240419145202_KompaniaRent")]
+    partial class KompaniaRent
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,37 +24,40 @@ namespace VectoVia_LabCourse.Migrations.KompaniaTaxisDb
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("VectoVia.Models.KompaniaTaxi.Model.KompaniaRent", b =>
+            modelBuilder.Entity("VectoVia.Models.Users.Model.User", b =>
                 {
-                    b.Property<int>("CompanyID")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CompanyID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<string>("ContactInfo")
+                    b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Kompania")
+                    b.Property<string>("Emri")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Location")
+                    b.Property<string>("Mbiemri")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Qyteti")
+                    b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Sigurimi")
+                    b.Property<int>("Role")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Username")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("CompanyID");
+                    b.HasKey("ID");
 
-                    b.ToTable("KompaniaTaxis");
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }
