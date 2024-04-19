@@ -10,6 +10,6 @@ namespace VectoVia.Models.Cars
 
         }
 
-        public DbSet<Car> Cars { get; set; }
+        public DbSet<Car> CarsDB { get; set; }
     }
 }

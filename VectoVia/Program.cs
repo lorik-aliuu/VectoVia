@@ -4,9 +4,9 @@ using VectoVia.Models.KompaniaTaxi.Services;
 using VectoVia.Models.Users.Services;
 using VectoVia.Models.KompaniaTaxi;
 using VectoVia.Models.Cars;
-using VectoVia.Models.TaxiCars;
 using VectoVia.Models.Cars.Services;
-using VectoVia.Models.TaxiCars.Services;
+using VectoVia.Models.KompaniaRents.Services;
+using VectoVia.Models.KompaniaRents;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +28,7 @@ builder.Services.AddDbContext<CarsDbContext>(options => options.UseSqlServer(
 builder.Services.AddDbContext<TaxiCarsDbContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("LorikLaptopString")
 ));
+
 
 builder.Services.AddTransient<UserServices>();
 builder.Services.AddTransient<KompaniaTaxiServices>();

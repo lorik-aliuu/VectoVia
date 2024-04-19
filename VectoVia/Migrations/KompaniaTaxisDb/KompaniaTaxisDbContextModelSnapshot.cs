@@ -21,7 +21,7 @@ namespace VectoVia_LabCourse.Migrations.KompaniaTaxisDb
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("VectoVia.Models.KompaniaTaxi.Model.KompaniaTaxii", b =>
+            modelBuilder.Entity("VectoVia.Models.KompaniaTaxi.Model.KompaniaRent", b =>
                 {
                     b.Property<int>("CompanyID")
                         .ValueGeneratedOnAdd()
