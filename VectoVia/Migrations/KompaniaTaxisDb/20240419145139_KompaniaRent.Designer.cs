@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VectoVia.Models.KompaniaTaxi;
 
@@ -10,9 +11,11 @@ using VectoVia.Models.KompaniaTaxi;
 namespace VectoVia_LabCourse.Migrations.KompaniaTaxisDb
 {
     [DbContext(typeof(KompaniaTaxisDbContext))]
-    partial class KompaniaTaxisDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240419145139_KompaniaRent")]
+    partial class KompaniaRent
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

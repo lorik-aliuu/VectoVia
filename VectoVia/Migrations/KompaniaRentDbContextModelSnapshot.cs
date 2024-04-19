@@ -3,14 +3,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using VectoVia.Models.KompaniaTaxi;
+using VectoVia.Models.KompaniaRents;
 
 #nullable disable
 
-namespace VectoVia_LabCourse.Migrations.KompaniaTaxisDb
+namespace VectoVia.Migrations
 {
-    [DbContext(typeof(KompaniaTaxisDbContext))]
-    partial class KompaniaTaxisDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(KompaniaRentDbContext))]
+    partial class KompaniaRentDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -21,7 +21,7 @@ namespace VectoVia_LabCourse.Migrations.KompaniaTaxisDb
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("VectoVia.Models.KompaniaTaxi.Model.KompaniaRent", b =>
+            modelBuilder.Entity("VectoVia.Models.KompaniaRents.Model.KompaniaRent", b =>
                 {
                     b.Property<int>("CompanyID")
                         .ValueGeneratedOnAdd()
@@ -37,7 +37,7 @@ namespace VectoVia_LabCourse.Migrations.KompaniaTaxisDb
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Location")
+                    b.Property<string>("PickUpLocation")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -51,7 +51,7 @@ namespace VectoVia_LabCourse.Migrations.KompaniaTaxisDb
 
                     b.HasKey("CompanyID");
 
-                    b.ToTable("KompaniaTaxis");
+                    b.ToTable("KompaniaRents");
                 });
 #pragma warning restore 612, 618
         }

@@ -11,6 +11,6 @@ public class KompaniaTaxisDbContext : DbContext
     {
     }
 
-    public DbSet<KompaniaTaxii> KompaniaTaxis { get; set; }
+    public DbSet<Model.KompaniaTaxi> KompaniaTaxis { get; set; }
 }
 
