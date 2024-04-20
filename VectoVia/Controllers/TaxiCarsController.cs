@@ -22,14 +22,14 @@ namespace VectoVia.Controllers
         [HttpGet("get-taxi-cars")]
         public IActionResult GetTaxiCars()
         {
-            var taxiCars = _taxiServices;
+            var taxiCars = _taxiServices.GetTaxiCars();
             return Ok(taxiCars);
         }
 
         [HttpGet("get-taxiCars-ByTargat/{targat}")]
-        public IActionResult GetTaxiCarsByTargat(string i)
+        public IActionResult GetTaxiCarsByTargat(string targat)
         {
-            var taxiCars = _taxiServices.GetTaxiCarsByTargat(i);
+            var taxiCars = _taxiServices.GetTaxiCarsByTargat(targat);
             return Ok(taxiCars);
         }
 
@@ -43,16 +43,16 @@ namespace VectoVia.Controllers
         }
 
         [HttpPut("update-taxiCar-by-Targat/{targat}")]
-        public IActionResult UpdateTaxiCarByTargat(string  i, [FromBody] TaxiCarVM tc)
+        public IActionResult UpdateTaxiCarByTargat(string  targat, [FromBody] TaxiCarVM tc)
         {
-            var updatedTaxiCar = _taxiServices.UpdateTaxiCarByTargat(i, tc);
+            var updatedTaxiCar = _taxiServices.UpdateTaxiCarByTargat(targat, tc);
             return Ok(updatedTaxiCar);
         }
 
         [HttpDelete("delete-taxiCar-by-Targat/{targat}")]
-        public IActionResult DeleteTaxiCarByTargat(string i)
+        public IActionResult DeleteTaxiCarByTargat(string targat)
         {
-            _taxiServices.DeleteTaxiCarsByTargat(i);
+            _taxiServices.DeleteTaxiCarsByTargat(targat);
             return Ok();
         }
     }

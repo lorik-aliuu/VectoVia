@@ -21,9 +21,8 @@ namespace VectoVia.Models.TaxiCars.Services
         {
             var _taxiCar = new TaxiCar()
             {
-
+                Targat = tx.Targat,
                
-
                 TaxiID = tx.TaxiID,
 
                 nrPassenger = tx.nrPassenger,
@@ -54,9 +53,9 @@ namespace VectoVia.Models.TaxiCars.Services
             return _context.TaxiCars.FirstOrDefault(n => n.Targat.Equals(i));
         }
 
-        public TaxiCar UpdateTaxiCarByTargat(string i, TaxiCarVM Car)
+        public TaxiCar UpdateTaxiCarByTargat(string Targat, TaxiCarVM Car)
         {
-            var _taxiCar = _context.TaxiCars.FirstOrDefault(n => n.Targat.Equals(i));
+            var _taxiCar = _context.TaxiCars.FirstOrDefault(n => n.Targat.Equals(Targat));
             if (_taxiCar != null)
             {
                 _taxiCar.TaxiID = Car.TaxiID;
@@ -66,13 +65,12 @@ namespace VectoVia.Models.TaxiCars.Services
                 _taxiCar.llojiKarburantit = Car.llojiKarburantit;
                 _taxiCar.iDisponueshem = Car.iDisponueshem;
 
-
                 _context.SaveChanges();
             }
 
             return _taxiCar;
-
         }
+
 
         public void DeleteTaxiCarsByTargat(string i)
         {
