@@ -1,7 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using VectoVia.Models.Cars.Model;
-using VectoVia.Models.TaxiCars.Model;
-using VectoVia.Models.Users.Model;
+﻿using VectoVia.Models.TaxiCars.Model;
 using VectoVia.Views;
 
 namespace VectoVia.Models.TaxiCars.Services
@@ -42,7 +39,7 @@ namespace VectoVia.Models.TaxiCars.Services
 
         }
 
-        public List<TaxiCar> GetTaxiCars()
+        public List<TaxiCar> GetAllTaxiCars()
         {
             var allTaxiCars = _context.TaxiCars.ToList();
             return allTaxiCars;
