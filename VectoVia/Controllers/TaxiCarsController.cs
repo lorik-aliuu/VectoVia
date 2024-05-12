@@ -11,7 +11,7 @@ namespace VectoVia.Controllers
     public class TaxiCarController : ControllerBase
     {
         public TaxiCarServices _taxiServices;
-       
+
 
         public TaxiCarController(TaxiCarServices tcs)
         {
@@ -21,7 +21,7 @@ namespace VectoVia.Controllers
         [HttpGet("get-taxi-cars")]
         public IActionResult GetAllTaxiCars()
         {
-            var taxiCars = _taxiServices.GetAllTaxiCars() ;
+            var taxiCars = _taxiServices.GetAllTaxiCars();
             return Ok(taxiCars);
         }
 
@@ -42,7 +42,7 @@ namespace VectoVia.Controllers
         }
 
         [HttpPut("update-taxiCar-by-Targat/{targat}")]
-        public IActionResult UpdateTaxiCarByTargat(string  targat, [FromBody] TaxiCarVM tc)
+        public IActionResult UpdateTaxiCarByTargat(string targat, [FromBody] TaxiCarVM tc)
         {
             var updatedTaxiCar = _taxiServices.UpdateTaxiCarByTargat(targat, tc);
             return Ok(updatedTaxiCar);

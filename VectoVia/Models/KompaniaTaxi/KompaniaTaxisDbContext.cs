@@ -3,14 +3,15 @@ using VectoVia.Models.KompaniaTaxi.Model;
 
 
 
-namespace VectoVia.Models.KompaniaTaxi;
-
-public class KompaniaTaxisDbContext : DbContext
+namespace VectoVia.Models.KompaniaTaxi
 {
-    public KompaniaTaxisDbContext(DbContextOptions<KompaniaTaxisDbContext> options) : base(options)
+    public class KompaniaTaxisDbContext : DbContext
     {
+        public KompaniaTaxisDbContext(DbContextOptions<KompaniaTaxisDbContext> options) : base(options)
+        {
+        }
+
+        public DbSet<Model.KompaniaTaxi> KompaniaTaxis { get; set; }
     }
 
-    public DbSet<Model.KompaniaTaxi> KompaniaTaxis { get; set; }
 }
-
