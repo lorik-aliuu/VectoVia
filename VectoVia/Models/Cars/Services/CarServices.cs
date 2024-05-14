@@ -1,5 +1,5 @@
-﻿using VectoVia.Models.Cars;
-using VectoVia.Models.Cars.Model;
+﻿using VectoVia.Models.Cars.Model;
+using VectoVia.Models.Cars.NewFolder;
 using VectoVia.Views;
 
 namespace VectoVia.Models.Cars.Services
@@ -22,23 +22,23 @@ namespace VectoVia.Models.Cars.Services
                 Transmisioni = Car.Transmisioni,
                 VitiProdhimit = Car.VitiProdhimit,
             };
-            _context.CarsDB.Add(_car);
+            _context.Cars.Add(_car);
             _context.SaveChanges();
         }
 
         public List<Car> GetCars()
         {
-            var allCars = _context.CarsDB.ToList();
+            var allCars = _context.Cars.ToList();
             return allCars;
         }
         public Car GetCarsByID(int CarID)
         {
-            return _context.CarsDB.FirstOrDefault(n => n.Tabelat == CarID);
+            return _context.Cars.FirstOrDefault(n => n.Tabelat == CarID);
         }
 
         public Car UpdateCarByID(int CarID, CarVM Car)
         {
-            var _Car = _context.CarsDB.FirstOrDefault(n => n.Tabelat == CarID);
+            var _Car = _context.Cars.FirstOrDefault(n => n.Tabelat == CarID);
             if (_Car != null)
             {
 
@@ -57,10 +57,10 @@ namespace VectoVia.Models.Cars.Services
 
         public void DeleteCarByID(int CarID)
         {
-            var _Car = _context.CarsDB.FirstOrDefault(n => n.Tabelat == CarID);
+            var _Car = _context.Cars.FirstOrDefault(n => n.Tabelat == CarID);
             if (_Car != null)
             {
-                _context.CarsDB.Remove(_Car);
+                _context.Cars.Remove(_Car);
                 _context.SaveChanges();
             }
         }

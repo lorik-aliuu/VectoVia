@@ -1,5 +1,4 @@
 using VectoVia.Models.Cars.Services;
-using VectoVia.Models.Cars;
 using VectoVia.Models.KompaniaRents;
 using VectoVia.Models.KompaniaTaxi.Services;
 using VectoVia.Models.KompaniaTaxi;
@@ -8,6 +7,8 @@ using VectoVia.Models.TaxiCars;
 using VectoVia.Models.Users.Services;
 using VectoVia.Models.Users;
 using Microsoft.EntityFrameworkCore;
+using VectoVia.Models.Cars.NewFolder;
+using VectoVia.Models.KompaniaRents.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,7 +39,7 @@ builder.Services.AddTransient<UserServices>();
 builder.Services.AddTransient<KompaniaTaxiServices>();
 builder.Services.AddTransient<CarServices>();
 builder.Services.AddTransient<TaxiCarServices>();
-builder.Services.AddTransient<KompaniaRentDbContext>();
+builder.Services.AddTransient<KompaniaRentServices>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

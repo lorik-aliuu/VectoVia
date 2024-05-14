@@ -22,7 +22,7 @@ namespace VectoVia.Models.KompaniaTaxi.Services
             {
                 Kompania = kompaniaTaxi.Kompania,
                 Location = kompaniaTaxi.Location,
-                Qyteti = kompaniaTaxi.Qyteti,
+                Qyteti = kompaniaTaxi.emriIQyteti,
                 ContactInfo = kompaniaTaxi.ContactInfo,
                 Sigurimi = kompaniaTaxi.Sigurimi,
             };
@@ -47,7 +47,7 @@ namespace VectoVia.Models.KompaniaTaxi.Services
             {
                 _kompaniataxi.Kompania = KompaniaTaxi.Kompania;
                 _kompaniataxi.Location = KompaniaTaxi.Location;
-                _kompaniataxi.Qyteti = KompaniaTaxi.Qyteti;
+                _kompaniataxi.Qyteti = KompaniaTaxi.emriIQyteti;
                 _kompaniataxi.ContactInfo = KompaniaTaxi.ContactInfo;
                 _kompaniataxi.Sigurimi = KompaniaTaxi.Sigurimi;
 
