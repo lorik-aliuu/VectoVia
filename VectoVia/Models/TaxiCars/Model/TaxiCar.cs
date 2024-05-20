@@ -5,7 +5,7 @@ namespace VectoVia.Models.TaxiCars.Model
     public class TaxiCar
     {
         [Key]
-        public string Targat { get; set; }
+        public  string Targat { get; set; }
 
         public int TaxiID { get; set; }
 

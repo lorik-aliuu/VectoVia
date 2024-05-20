@@ -34,14 +34,14 @@ namespace VectoVia.Controllers
 
         [HttpPost("add-user")]
 
-        public IActionResult AddUser([FromBody] UserVM user)
+        public IActionResult AddUser([FromBody]UserVM user)
         {
             _userService.AddUser(user);
             return Ok();
         }
 
         [HttpPut("update-user-by-id/{id}")]
-        public IActionResult UpdateUserByID(int id, [FromBody] UserVM user)
+        public IActionResult UpdateUserByID(int id, [FromBody]UserVM user)
         {
             var updatedUser = _userService.UpdateUserByID(id, user);
             return Ok(updatedUser);

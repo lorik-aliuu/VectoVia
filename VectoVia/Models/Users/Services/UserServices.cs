@@ -28,7 +28,7 @@ namespace VectoVia.Models.Users.Services
             _context.Users.Add(_user);
             _context.SaveChanges();
         }
-
+    
         public List<User> GetUsers()
         {
             var allUsers = _context.Users.ToList();
@@ -41,7 +41,7 @@ namespace VectoVia.Models.Users.Services
 
         public User UpdateUserByID(int UserID, UserVM user)
         {
-            var _user = _context.Users.FirstOrDefault(n => n.ID == UserID);
+            var _user = _context.Users.FirstOrDefault(n => n.ID==UserID);
             if (_user != null)
             {
                 _user.Emri = user.Emri;
@@ -57,11 +57,11 @@ namespace VectoVia.Models.Users.Services
             return _user;
 
         }
-
+        
         public void DeleteUserByID(int UserID)
         {
             var _user = _context.Users.FirstOrDefault(n => n.ID == UserID);
-            if (_user != null)
+            if(_user != null )
             {
                 _context.Users.Remove(_user);
                 _context.SaveChanges();

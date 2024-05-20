@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VectoVia.Models.KompaniaTaxi;
 
@@ -10,9 +11,11 @@ using VectoVia.Models.KompaniaTaxi;
 namespace VectoVia_LabCourse.Migrations.KompaniaTaxisDb
 {
     [DbContext(typeof(KompaniaTaxisDbContext))]
-    partial class KompaniaTaxisDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240415000524_alpi")]
+    partial class alpi
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,7 +24,7 @@ namespace VectoVia_LabCourse.Migrations.KompaniaTaxisDb
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("VectoVia.Models.KompaniaTaxi.Model.KompaniaTaxi", b =>
+            modelBuilder.Entity("VectoVia.Models.KompaniaTaxi.Model.KompaniaTaxii", b =>
                 {
                     b.Property<int>("CompanyID")
                         .ValueGeneratedOnAdd()
