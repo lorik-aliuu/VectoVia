@@ -35,6 +35,10 @@ builder.Services.AddDbContext<KompaniaRentDbContext>(options => options.UseSqlSe
     builder.Configuration.GetConnectionString("AlpLaptopString")
 ));
 
+builder.Services.AddDbContext<QytetiDbContext>(options => options.UseSqlServer(
+    builder.Configuration.GetConnectionString("AlpLaptopString")
+));
+
 builder.Services.AddTransient<UserServices>();
 builder.Services.AddTransient<KompaniaTaxiServices>();
 builder.Services.AddTransient<QytetiServices>();
