@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using VectoVia.Models.Cars.Model;
 
-namespace VectoVia.Models.Cars.NewFolder
+namespace VectoVia.Models.Cars
 {
     public class CarsDbContext : DbContext
     {
@@ -10,6 +10,6 @@ namespace VectoVia.Models.Cars.NewFolder
 
         }
 
-        public DbSet<Car> Cars { get; set; }
+        public DbSet<Car> CarsDB { get; set; }
     }
 }

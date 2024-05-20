@@ -3,14 +3,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using VectoVia.Models.KompaniaTaxi;
+using VectoVia.Models.Cars;
 
 #nullable disable
 
-namespace VectoVia_LabCourse.Migrations.KompaniaTaxisDb
+namespace VectoVia_LabCourse.Migrations.CarsDb
 {
-    [DbContext(typeof(KompaniaTaxisDbContext))]
-    partial class KompaniaTaxisDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(CarsDbContext))]
+    partial class CarsDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -21,37 +21,36 @@ namespace VectoVia_LabCourse.Migrations.KompaniaTaxisDb
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("VectoVia.Models.KompaniaTaxi.Model.KompaniaTaxi", b =>
+            modelBuilder.Entity("VectoVia.Models.Cars.Model.Car", b =>
                 {
-                    b.Property<int>("CompanyID")
+                    b.Property<int>("Tabelat")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CompanyID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Tabelat"));
 
-                    b.Property<string>("ContactInfo")
+                    b.Property<string>("Karburanti")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Kompania")
+                    b.Property<string>("Marka")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Location")
+                    b.Property<string>("Modeli")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Qyteti")
+                    b.Property<string>("Transmisioni")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Sigurimi")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("VitiProdhimit")
+                        .HasColumnType("int");
 
-                    b.HasKey("CompanyID");
+                    b.HasKey("Tabelat");
 
-                    b.ToTable("KompaniaTaxis");
+                    b.ToTable("CarsDB");
                 });
 #pragma warning restore 612, 618
         }
