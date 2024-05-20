@@ -5,8 +5,7 @@ namespace VectoVia.Models.TaxiCars
 {
     public class TaxiCarsDbContext : DbContext
     {
-        public TaxiCarsDbContext(DbContextOptions<TaxiCarsDbContext> options) : base(options)
-        {
+        public TaxiCarsDbContext(DbContextOptions <TaxiCarsDbContext> options ) : base(options) {
 
         }
 

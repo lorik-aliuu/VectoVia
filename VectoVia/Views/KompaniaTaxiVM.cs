@@ -1,6 +1,4 @@
-﻿using VectoVia.Models.KompaniaTaxi.Model;
-
-namespace VectoVia.Views
+﻿namespace VectoVia.Views
 {
     public class KompaniaTaxiVM
     {
@@ -8,7 +6,7 @@ namespace VectoVia.Views
 
         public string Location { get; set; }
 
-        public Qyteti emriIQyteti { get; set; }
+        public string Qyteti { get; set; }
         public string ContactInfo { get; set; }
 
         public string Sigurimi { get; set; }
