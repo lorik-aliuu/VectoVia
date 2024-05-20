@@ -4,16 +4,17 @@ using VectoVia.Models.KompaniaRents.Model;
 
 
 
-namespace VectoVia.Models.KompaniaRents;
-
-public class KompaniaRentDbContext : DbContext
+namespace VectoVia.Models.KompaniaRents
 {
-    
-
-    public KompaniaRentDbContext(DbContextOptions<KompaniaRentDbContext> options) : base(options)
+    public class KompaniaRentDbContext : DbContext
     {
+
+
+        public KompaniaRentDbContext(DbContextOptions<KompaniaRentDbContext> options) : base(options)
+        {
+        }
+
+        public DbSet<KompaniaRent> KompaniaRents { get; set; }
     }
 
-    public DbSet<KompaniaRent> KompaniaRents { get; set; }
 }
-

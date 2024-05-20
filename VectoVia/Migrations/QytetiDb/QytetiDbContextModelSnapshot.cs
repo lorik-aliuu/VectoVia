@@ -8,10 +8,10 @@ using VectoVia.Models.KompaniaTaxi;
 
 #nullable disable
 
-namespace VectoVia.Migrations.KompaniaTaxisDb
+namespace VectoVia.Migrations.QytetiDb
 {
-    [DbContext(typeof(KompaniaTaxisDbContext))]
-    partial class KompaniaTaxisDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(QytetiDbContext))]
+    partial class QytetiDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -53,7 +53,7 @@ namespace VectoVia.Migrations.KompaniaTaxisDb
 
                     b.HasIndex("QytetiID");
 
-                    b.ToTable("KompaniaTaxis");
+                    b.ToTable("KompaniaTaxi");
                 });
 
             modelBuilder.Entity("VectoVia.Models.KompaniaTaxi.Model.Qyteti", b =>
@@ -70,7 +70,7 @@ namespace VectoVia.Migrations.KompaniaTaxisDb
 
                     b.HasKey("QytetiID");
 
-                    b.ToTable("Qyteti");
+                    b.ToTable("Qytetet");
                 });
 
             modelBuilder.Entity("VectoVia.Models.KompaniaTaxi.Model.KompaniaTaxi", b =>

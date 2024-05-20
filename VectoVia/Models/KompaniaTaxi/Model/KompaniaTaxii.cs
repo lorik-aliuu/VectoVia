@@ -9,12 +9,14 @@ namespace VectoVia.Models.KompaniaTaxi.Model
 
         public string Kompania { get; set; }
 
-        public string Location { get; set; }
-
-        public string Qyteti { get; set; }
+        public string Location { get; set; } 
 
         public string ContactInfo { get; set; }
 
         public string Sigurimi { get; set; }
+
+        public int? QytetiID { get; set; }
+
+        public Qyteti Qyteti { get; set; }
     }
 }
