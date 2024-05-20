@@ -37,6 +37,7 @@ builder.Services.AddDbContext<KompaniaRentDbContext>(options => options.UseSqlSe
 
 builder.Services.AddTransient<UserServices>();
 builder.Services.AddTransient<KompaniaTaxiServices>();
+builder.Services.AddTransient<QytetiServices>();
 builder.Services.AddTransient<CarServices>();
 builder.Services.AddTransient<TaxiCarServices>();
 builder.Services.AddTransient<KompaniaRentServices>();
