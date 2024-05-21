@@ -8,7 +8,7 @@ namespace VectoVia.Views
 
         public string Location { get; set; }
 
-        public Qyteti emriIQyteti { get; set; }
+        public int QytetiID { get; set; }
         public string ContactInfo { get; set; }
 
         public string Sigurimi { get; set; }
